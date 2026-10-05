@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titan — the value of time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="lux-header">
+    <nav class="lux-nav-left">
+      <a href="index.html">Home</a>
+      <a href="collections.html">Collection</a>
+      <a href="journal.html">Journal</a>
+      <a href="private-client.html">Private Client</a>
+    </nav>
+        <a href="index.html" class="lux-logo">
+      <span class="logo-mark">
+        <svg class="logo-clock" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="32" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+          <!-- hour marks -->
+          <line x1="32" y1="8" x2="32" y2="12" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="32" y1="52" x2="32" y2="56" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="8" y1="32" x2="12" y2="32" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="52" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <!-- hands ~ 10:10 -->
+          <line x1="32" y1="32" x2="32" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+          <line x1="32" y1="32" x2="44" y2="24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <span class="brand">Titan</span>
+      </span>
+      <span class="tag">the value of time</span>
+    </a>
+    <div class="lux-nav-right">
+      <a href="https://instagram.com" target="_blank" class="icon-btn" title="Instagram" aria-label="Instagram">◎</a>
+      <a href="wishlist.html" class="icon-btn" title="Wishlist">♡</a>
+      <a href="cart.html" class="icon-btn" title="Bag">👜 <span data-cart-count></span></a>
+      <a href="login.html">Sign in</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="images/hero-watch.jpg" alt="Featured timepiece" onerror="this.style.opacity='0.3'" />
+    <div class="hero-content">
+      <div class="hero-eyebrow">An independent house</div>
+      <h1>Timepieces preserved with the reverence they deserve.</h1>
+      <p>Each watch in our vault is authenticated by in-house watchmakers, documented in provenance, and delivered to your door under full insurance.</p>
+      <div class="hero-actions">
+        <a href="collections.html" class="btn btn-primary">Browse the vault</a>
+        <a href="private-client.html" class="btn btn-outline">Private Client</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Maisons</div>
+    <h2 class="section-title">The house of houses</h2>
+        <div class="maisons-grid">
+      <div class="maison-card"><h3>Rolex</h3><a href="collections.html?maison=Rolex">Explore</a></div>
+      <div class="maison-card"><h3>Audemars Piguet</h3><a href="collections.html?maison=Audemars%20Piguet">Explore</a></div>
+      <div class="maison-card"><h3>Patek Philippe</h3><a href="collections.html?maison=Patek%20Philippe">Explore</a></div>
+      <div class="maison-card"><h3>Omega</h3><a href="collections.html?maison=Omega">Explore</a></div>
+      <div class="maison-card"><h3>IWC</h3><a href="collections.html?maison=IWC">Explore</a></div>
+      <div class="maison-card"><h3>Breitling</h3><a href="collections.html?maison=Breitling">Explore</a></div>
+      <div class="maison-card"><h3>Cartier</h3><a href="collections.html?maison=Cartier">Explore</a></div>
+      <div class="maison-card"><h3>Seiko</h3><a href="collections.html?maison=Seiko">Explore</a></div>
+      <div class="maison-card"><h3>Tissot</h3><a href="collections.html?maison=Tissot">Explore</a></div>
+      <div class="maison-card"><h3>Titan</h3><a href="collections.html?maison=Titan">Explore</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2rem">
+      <div>
+        <div class="section-label">Selected this season</div>
+        <h2 class="section-title" style="margin-bottom:0">Featured</h2>
+      </div>
+      <a href="collections.html" style="font-size:13px;color:var(--muted)">See all →</a>
+    </div>
+    <div class="product-grid" id="featured-grid"></div>
+  </section>
+
+  <section class="journal-teaser">
+    <div class="img-side">
+      <img src="images/journal-movement.jpg" alt="Movement detail" onerror="this.style.opacity='0.4'" />
+    </div>
+    <div class="text-side">
+      <div class="label">The Journal</div>
+      <h2>A field guide to the movements, complications, and provenance that shape the modern collector’s library.</h2>
+      <p>Read our latest studies, buyer’s guides, and market notes.</p>
+      <a href="journal.html" class="btn btn-outline">Read the Journal</a>
+    </div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="trust-item">
+      <h4>Authenticated in-house</h4>
+      <p>Every timepiece passes a full technical inspection by our master watchmakers before it enters the vault.</p>
+    </div>
+    <div class="trust-item">
+      <h4>Insured worldwide shipping</h4>
+      <p>Discreet, tracked, and fully insured to your door — anywhere in the world.</p>
+    </div>
+    <div class="trust-item">
+      <h4>Private Client available</h4>
+      <p>A dedicated advisor for viewings, sourcing, and bespoke acquisitions.</p>
+    </div>
+  </section>
+
+  <footer class="lux-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">Titan</div>
+        <p>Independent horology house. Authenticated timepieces from the world’s most storied manufactures.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="collections.html">Collection</a>
+        <a href="journal.html">Journal</a>
+        <a href="private-client.html">Private Client</a>
+      </div>
+      <div class="footer-col">
+        <h4>Assurance</h4>
+        <p>Two-year warranty</p>
+        <p>Fully insured worldwide shipping</p>
+        <p>7-day inspection window</p>
+        <p>In-house watchmaker authentication</p>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <p>privateclient@titan.example</p>
+        <p>+41 22 555 0100</p>
+        <p>By appointment · Geneva & London</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Titan Horology · All rights reserved</div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

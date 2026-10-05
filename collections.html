@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection — Titan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="lux-header">
+    <nav class="lux-nav-left">
+      <a href="index.html">Home</a>
+      <a href="collections.html" class="active">Collection</a>
+      <a href="journal.html">Journal</a>
+      <a href="private-client.html">Private Client</a>
+    </nav>
+        <a href="index.html" class="lux-logo">
+      <span class="logo-mark">
+        <svg class="logo-clock" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="32" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+          <!-- hour marks -->
+          <line x1="32" y1="8" x2="32" y2="12" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="32" y1="52" x2="32" y2="56" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="8" y1="32" x2="12" y2="32" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <line x1="52" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <!-- hands ~ 10:10 -->
+          <line x1="32" y1="32" x2="32" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+          <line x1="32" y1="32" x2="44" y2="24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <span class="brand">Titan</span>
+      </span>
+      <span class="tag">the value of time</span>
+    </a>
+    <div class="lux-nav-right">
+      <a href="https://instagram.com" target="_blank" class="icon-btn" title="Instagram" aria-label="Instagram">◎</a>
+      <a href="wishlist.html" class="icon-btn">♡</a>
+      <a href="cart.html" class="icon-btn">👜 <span data-cart-count></span></a>
+      <a href="login.html">Sign in</a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="label">The Collection</div>
+    <h1>Browse the vault</h1>
+  </div>
+
+  <div class="collection-layout">
+    <!-- SIDEBAR FILTERS -->
+    <aside class="filters">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+        <strong style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase">Refine</strong>
+        <button onclick="clearAllFilters()" style="background:none;border:none;font-size:12px;color:var(--muted);cursor:pointer">Clear all</button>
+      </div>
+
+      <div class="filter-group">
+        <h4>Maison</h4>
+        <label><input type="checkbox" data-filter="maison" value="Rolex" /> Rolex</label>
+        <label><input type="checkbox" data-filter="maison" value="Audemars Piguet" /> Audemars Piguet</label>
+        <label><input type="checkbox" data-filter="maison" value="Patek Philippe" /> Patek Philippe</label>
+        <label><input type="checkbox" data-filter="maison" value="Omega" /> Omega</label>
+        <label><input type="checkbox" data-filter="maison" value="IWC" /> IWC</label>
+        <label><input type="checkbox" data-filter="maison" value="Breitling" /> Breitling</label>
+        <label><input type="checkbox" data-filter="maison" value="Cartier" /> Cartier</label>
+        <label><input type="checkbox" data-filter="maison" value="Seiko" /> Seiko</label>
+        <label><input type="checkbox" data-filter="maison" value="Tissot" /> Tissot</label>
+        <label><input type="checkbox" data-filter="maison" value="Fossil" /> Fossil</label>
+        <label><input type="checkbox" data-filter="maison" value="Citizen" /> Citizen</label>
+        <label><input type="checkbox" data-filter="maison" value="Casio" /> Casio</label>
+        <label><input type="checkbox" data-filter="maison" value="Titan" /> Titan</label>
+        <label><input type="checkbox" data-filter="maison" value="Michael Kors" /> Michael Kors</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price</h4>
+        <div class="price-inputs">
+          <input type="number" id="price-min" placeholder="Min" min="0" />
+          <input type="number" id="price-max" placeholder="Max" min="0" />
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Condition</h4>
+        <label><input type="checkbox" data-filter="condition" value="New" /> New</label>
+        <label><input type="checkbox" data-filter="condition" value="Pre Owned" /> Pre Owned</label>
+        <label><input type="checkbox" data-filter="condition" value="Vintage" /> Vintage</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Gender</h4>
+        <label><input type="checkbox" data-filter="gender" value="Men" /> Men</label>
+        <label><input type="checkbox" data-filter="gender" value="Women" /> Women</label>
+        <label><input type="checkbox" data-filter="gender" value="Unisex" /> Unisex</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Movement</h4>
+        <label><input type="checkbox" data-filter="movement" value="Automatic" /> Automatic</label>
+        <label><input type="checkbox" data-filter="movement" value="Manual" /> Manual</label>
+        <label><input type="checkbox" data-filter="movement" value="Quartz" /> Quartz</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Complication</h4>
+        <label><input type="checkbox" data-filter="complication" value="Chronograph" /> Chronograph</label>
+        <label><input type="checkbox" data-filter="complication" value="GMT" /> GMT</label>
+        <label><input type="checkbox" data-filter="complication" value="Date" /> Date</label>
+        <label><input type="checkbox" data-filter="complication" value="Diver" /> Diver</label>
+        <label><input type="checkbox" data-filter="complication" value="Moonphase" /> Moonphase</label>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div>
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="search" id="search-input" placeholder="Search reference, brand, model" />
+        </div>
+        <div class="toolbar-right">
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="price-asc">Price · Low to high</option>
+            <option value="price-desc">Price · High to low</option>
+          </select>
+          <span id="piece-count">18 pieces</span>
+        </div>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="lux-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">Titan</div>
+        <p>Independent horology house. Authenticated timepieces from the world’s most storied manufactures.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="collections.html">Collection</a>
+        <a href="journal.html">Journal</a>
+        <a href="private-client.html">Private Client</a>
+      </div>
+      <div class="footer-col">
+        <h4>Assurance</h4>
+        <p>Two-year warranty</p>
+        <p>Fully insured worldwide shipping</p>
+        <p>7-day inspection window</p>
+        <p>In-house watchmaker authentication</p>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <p>privateclient@titan.example</p>
+        <p>+41 22 555 0100</p>
+        <p>By appointment · Geneva & London</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Titan Horology · All rights reserved</div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
